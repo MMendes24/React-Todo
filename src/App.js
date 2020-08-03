@@ -1,5 +1,6 @@
 import React from 'react';
 import TodoList from './components/TodoList'
+import TodoForm from './components/TodoForm'
 
 
 const listItems = [
@@ -19,10 +20,22 @@ class App extends React.Component {
     this.state = { listItems } // props destructuring, similar to what you do with Hooks (compare later)
 }
 
+addTodo = todoText => {
+  const newTodo = {
+    name: todoText,
+    id: new Date(),
+    cleared: false
+  }
+  this.setState({ // you always use setState with classes
+    listItems: [ newTodo, ...this.state.listItems]
+  }) 
+}
+
   render() {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
+        <TodoForm />
         <TodoList listItems={this.state.listItems} />
       </div>
     );
