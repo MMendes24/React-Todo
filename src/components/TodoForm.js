@@ -21,6 +21,10 @@ handleSubmit = e => {
         todoText: ""
       });
 }
+
+handleClear = e => {
+    this.props.clearAll()
+}
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
@@ -31,6 +35,7 @@ handleSubmit = e => {
                 onChange={this.handleInput}
                 />
                 <button>Add Task</button>
+                <button onClick={() => this.handleClear()}>Clear Completed</button>
             </form>
         )
     }

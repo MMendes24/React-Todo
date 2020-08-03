@@ -47,11 +47,28 @@ addTodo = todoText => {
   }) 
 }
 
+clearAll = () => {
+  this.setState({
+    listItems: this.state.listItems.filter(clTodo => {
+      if (clTodo.cleared === false) {
+        return {
+          ...clTodo
+        }
+      } else {
+        return null
+      }
+    })
+  })
+}
+
   render() {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        <TodoForm addTodo={this.addTodo} />
+        <TodoForm 
+        addTodo={this.addTodo} 
+        clearAll={this.clearAll}
+        />
         <TodoList 
         toggleItem={this.toggleItem}
         listItems={this.state.listItems} />
