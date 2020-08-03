@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoList from './components/TodoList'
 import TodoForm from './components/TodoForm'
+import './components/Todo.css'
 
 
 const listItems = [
@@ -20,6 +21,21 @@ class App extends React.Component {
     this.state = { listItems } // props destructuring, similar to what you do with Hooks (compare later)
 }
 
+toggleItem = id => {
+  this.setState({
+    listItems: this.state.listItems.map(todo => {
+      if (todo.id === id) {
+        return {
+          ...todo,
+          cleared: !todo.cleared
+        }
+      } else {
+        return todo
+      }
+    })
+  })
+}
+
 addTodo = todoText => {
   const newTodo = {
     name: todoText,
@@ -36,7 +52,9 @@ addTodo = todoText => {
       <div>
         <h2>Welcome to your Todo App!</h2>
         <TodoForm addTodo={this.addTodo} />
-        <TodoList listItems={this.state.listItems} />
+        <TodoList 
+        toggleItem={this.toggleItem}
+        listItems={this.state.listItems} />
       </div>
     );
   }
