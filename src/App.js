@@ -2,6 +2,8 @@ import React from 'react';
 import TodoList from './components/TodoList'
 import TodoForm from './components/TodoForm'
 import './components/Todo.css'
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Grid from '@material-ui/core/Grid'
 
 
 const listItems = [
@@ -63,16 +65,30 @@ clearAll = () => {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
+        <CssBaseline />
+        <div>
+          <Grid
+            container
+            direction="column"
+            justify="center"
+            alignItems="center"
+           >
         <h2>Welcome to your Todo App!</h2>
+
         <TodoForm 
         addTodo={this.addTodo} 
         clearAll={this.clearAll}
         />
+
         <TodoList 
         toggleItem={this.toggleItem}
-        listItems={this.state.listItems} />
+        listItems={this.state.listItems} 
+        />
+
+        </Grid>
       </div>
+    </React.Fragment>
     );
   }
 }
