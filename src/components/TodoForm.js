@@ -41,9 +41,11 @@ handleClear = e => {
                 </div>
                 <div className="button-container">
                 <button
+                className="form-button"
                     >
                     Add</button>
                 <button 
+                    className="form-button" 
                     onClick={() => this.handleClear()}
                     >
                 Clear</button>

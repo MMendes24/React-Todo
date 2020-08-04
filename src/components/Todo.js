@@ -7,7 +7,7 @@ const Todo = props => {
         onClick={() => props.toggleItem(props.todo.id)}
         className={`list-item ${props.todo.cleared === true ? "cleared" : ""}`}
         >
-        {props.todo.name}
+         {props.todo.name}
         </li>
     )
 }
