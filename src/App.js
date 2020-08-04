@@ -2,9 +2,6 @@ import React from 'react';
 import TodoList from './components/TodoList'
 import TodoForm from './components/TodoForm'
 import './components/Todo.css'
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Grid from '@material-ui/core/Grid'
-
 
 const listItems = [
   {
@@ -65,30 +62,25 @@ clearAll = () => {
 
   render() {
     return (
-      <React.Fragment>
-        <CssBaseline />
-        <div>
-          <Grid
-            container
-            direction="column"
-            justify="center"
-            alignItems="center"
-           >
-        <h2>Welcome to your Todo App!</h2>
-
+        <div className="app-container">
+          <div className="header-container">
+          <header className="page-header">
+            <h1>The To-Do App</h1>
+            <h2>What's on your list?</h2>
+          </header>
         <TodoForm 
         addTodo={this.addTodo} 
         clearAll={this.clearAll}
         />
-
+        </div>
+        <div className="todo-container">
+        <h2>My To-Do List</h2>
         <TodoList 
         toggleItem={this.toggleItem}
         listItems={this.state.listItems} 
         />
-
-        </Grid>
+        </div>
       </div>
-    </React.Fragment>
     );
   }
 }

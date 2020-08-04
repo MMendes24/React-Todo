@@ -2,12 +2,13 @@ import React from "react";
 
 const Todo = props => {
     return (
-        <div
+        <li
+        
         onClick={() => props.toggleItem(props.todo.id)}
-        className={props.todo.cleared === true ? "cleared" : ""}
+        className={`list-item ${props.todo.cleared === true ? "cleared" : ""}`}
         >
-        <p>{props.todo.name}</p>
-        </div>
+        {props.todo.name}
+        </li>
     )
 }
 

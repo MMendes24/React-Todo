@@ -1,3 +1,129 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 62.5%;
+	font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+    background-image: url('https://images.unsplash.com/photo-1527345931282-806d3b11967f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1934&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 2% 10%;
+}
+
+.app-container {
+    font-family: 'Architects Daughter', cursive;
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin: 2% 0%;
+    opacity: 0.8;
+}
+
+.header-container {
+    width:100%;  
+}
+
+.page-header {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin: 2% 10%;
+}
+
+.page-header h1 {
+    font-size:3rem;
+    margin: 4% 0%;
+}
+
+.page-header h2 {
+    font-size:2rem;
+    margin: 1% 0%;
+}
+
+.task-form {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.button-container {
+    display: flex;
+}
+
+.task-form button {
+    margin: 2%;
+    padding: 8%;
+    background-color: black;
+    color: antiquewhite;
+}
+
+.task-form input {
+    margin: 5% 0%;
+    border: 1px solid black;
+}
+
+.todo-container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: 100%; 
+}
+
+.todo-container h2 {
+    font-size:3rem;
+    margin: 4% 0%;
+    text-decoration: underline;
+}
+
+.list-item {
+    font-size:1.5rem;
+    margin: 1% 0%;
+    list-style-type: square;
+}
 
 .cleared {
     text-decoration: line-through;
